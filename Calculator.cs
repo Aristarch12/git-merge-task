@@ -9,7 +9,7 @@ namespace Kontur.Courses.Git
 			if (args.Length == 0)
 				return lastResult;
 			if (args.Length == 1)
-				return lastResult = double.Parse(args[0]);
+				return lastResult = TryParseDouble(args[0]);
 			if (args.Length == 2)
 			{
 			    var v2 = double.Parse(args[1]);
