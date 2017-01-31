@@ -12,13 +12,8 @@ namespace Kontur.Courses.Git
 				return lastResult = double.Parse(args[0]);
 			if (args.Length == 2)
 			{
-				// Если не хватает первого аргумента, то использовать lastResult
-				// Должно работать так:
-				// 2 + 2
-				//> 4
-				// + 1
-				//>5
-				return lastResult = Maybe<double>.FromError("Not implemented yet");
+			    var v2 = double.Parse(args[1]);
+                return lastResult = Execute(args[0], lastResult.Value, v2);
 			}
 			if (args.Length == 3)
 			{
@@ -36,7 +31,7 @@ namespace Kontur.Courses.Git
 			if (op == "-")
 				return v1 - v2;
 			if (op == "*")
-				return v1 - v2;
+				return v1 * v2;
 			if (op == "/")
 				return v1 / v2;
 			return Maybe<double>.FromError("Unknown operation '{0}'", op);
