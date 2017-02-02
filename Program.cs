@@ -48,5 +48,10 @@ namespace Kontur.Courses.Git
 		{
 			return char.IsDigit(c) ? 0 : char.IsLetter(c) ? 1 : 2;
 		}
+
+		private static int GetCharClass(char c)
+		{
+			return char.IsDigit(c) ? 0 : char.IsLetter(c) ? 1 : 2;
+		}
 	}
 }
