@@ -36,15 +36,18 @@ namespace Kontur.Courses.Git
 
 		private Maybe<double> Execute(string op, double v1, double v2)
 		{
-			if (op == "+")
-				return v1 + v2;
-			if (op == "-")
-				return v1 - v2;
-			if (op == "*")
-				return v1 * v2;
-			if (op == "/")
-				return v1 / v2;
-			return Maybe<double>.FromError("Unknown operation '{0}'", op);
+			switch (op)
+			{
+			    case "+":
+			        return v1 + v2;
+			    case "-":
+			        return v1 - v2;
+			    case "*":
+			        return v1 * v2;
+			    case "/":
+			        return v1 / v2;
+			}
+		    return Maybe<double>.FromError("Unknown operation '{0}'", op);
 		}
 	}
 }
